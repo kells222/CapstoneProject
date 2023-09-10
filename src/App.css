@@ -1,3 +1,10 @@
+.form-container {
+  padding-top: 50px;
+  padding-bottom: 60px;
+  border: solid pink 5px;
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
