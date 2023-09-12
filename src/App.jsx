@@ -5,6 +5,7 @@ import NavBar from './components/css/NavBar';
 import { Route, Routes } from 'react-router-dom';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import Posts from './components/Posts';
 
 function App() {
  
@@ -16,7 +17,7 @@ function App() {
     
     <Routes>
       
-
+      <Route path='/home' element={<Posts/>}/>
       <Route path='/login' element={<Login/>} />
       <Route path='/signup' element={<Signup/>} />
 

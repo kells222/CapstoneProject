@@ -47,3 +47,9 @@
 .read-the-docs {
   color: #888;
 }
+
+
+img {
+  height: 500px;
+  width: fit-content;
+}

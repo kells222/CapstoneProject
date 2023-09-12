@@ -1,6 +1,6 @@
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -26,23 +26,19 @@ function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="/">Home</Nav.Link>
+                  <Nav.Link href="/home">Home</Nav.Link>
                   <Nav.Link href="/login">Login</Nav.Link>
                   <NavDropdown
-                    title="More Options"
-                    id={`offcanvasNavbarDropdown-expand-${expand}`}
-                  >
-                    <NavDropdown.Item href="#action3">View All Posts</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">
-                      Another action
-                    </NavDropdown.Item>
-                    <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action5">
-                      Checkout as Guest
-                    </NavDropdown.Item>
+                    title="Seach By Category"
+                    id={`offcanvasNavbarDropdown-expand-${expand}`}>
+                    <NavDropdown.Item href="#action3">Men's Clothing</NavDropdown.Item>
+                    <NavDropdown.Item href="#action4">Women's Clothing</NavDropdown.Item>
+                    <NavDropdown.Item href="#action5">Jewelery</NavDropdown.Item>
+                    <NavDropdown.Item href="#action6">Electronics</NavDropdown.Item>
                   </NavDropdown>
+                  <Nav.Link href="/guestcheckout">Checkout as Guest</Nav.Link>
                 </Nav>
-                <Form className="d-flex">
+                {/* <Form className="d-flex">
                   <Form.Control
                     type="search"
                     placeholder="Search Products"
@@ -50,7 +46,7 @@ function NavBar() {
                     aria-label="Search"
                   />
                   <Button variant="outline-success">Search</Button>
-                </Form>
+                </Form> */}
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
