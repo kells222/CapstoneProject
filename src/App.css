@@ -53,3 +53,7 @@ img {
   height: 500px;
   width: fit-content;
 }
+
+h4 {
+  color: rgba(163, 92, 104, 0.797);
+}

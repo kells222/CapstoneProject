@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import Filter from './Filter';
 
 function Posts() {
 const [posts,setPosts] = useState([])
 const [expandedPostId,setExpandedPostId] = useState(null)
+const [selectedCategory,setSelectedCategory] = useState('');
+const [categories, setCategories] = useState([]);
 
     const getAllPosts = () => {
         axios.get('https://fakestoreapi.com/products')
         .then(res=>{
             console.log(res)
             setPosts(res.data);
+            // const specificCats = [...new Set(data.map((post)=> post.category))];
+            // setCategories(specificCats);
+            // console.log(specificCats);
         })
         .catch (err=>{
             console.log('error fetching posts', err)
@@ -30,12 +35,24 @@ const [expandedPostId,setExpandedPostId] = useState(null)
         }
     };
 
+   const handleCatChange = (category) => {
+    setSelectedCategory(category);
+   };
+
+   const filteredPosts = selectedCategory
+   ? posts.filter((post)=> post.category === selectedCategory) : posts;
+
+
   return (
     <>
    <div className='Posts'>
+
+        <Filter categories={categories} selectedCategory={selectedCategory} onSelectCategory={handleCatChange}/>
+
         {/* <button onClick={getAllPosts}>get posts</button> */}
         <div className='post-list'>
-            {posts.map(post => (
+            <h4>Click an item to view more details</h4>
+            {filteredPosts.map(post => (
                 <div key={post.id} className='post'>
                     <section onClick={()=> handlePostClick(post.id)}>
                     <h2>{post.title}</h2>
