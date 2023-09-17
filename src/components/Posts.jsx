@@ -71,6 +71,7 @@ const [categories, setCategories] = useState([]);
                         <p>{post.rating.rate}</p>
                         <h5>Inventory remaining:</h5>
                         <p>{post.rating.count}</p>
+                        <button>Add to cart</button>
                     </div> 
                     )}
                 </div>

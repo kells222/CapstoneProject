@@ -39,7 +39,7 @@ function NavBar() {
                     <NavDropdown.Item href="#action5">Jewelery</NavDropdown.Item>
                     <NavDropdown.Item href="#action6">Electronics</NavDropdown.Item>
                   </NavDropdown> */}
-                  <Nav.Link href="/guestcheckout">Checkout as Guest</Nav.Link>
+                  <Nav.Link href="/checkout">Checkout</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

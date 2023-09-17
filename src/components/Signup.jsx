@@ -1,18 +1,34 @@
 import React from 'react';
 import { useState} from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 
-function Signup() {
+function Signup({setToken}) {
     const [user, setUser] = useState('');
     const [password,setPassword] = useState('');
     
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(user);
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      console.log(user);
+      // dont forget to take off console pw
+      console.log(password);
+      
+      try { 
+        const response = await axios.post(`https://fakestoreapi.com/users`, {
+          username: user,
+          password: password
+        });
+        const result = response.data;
+        setToken(result.token);
+        console.log(result) 
+        
+      } catch (error) {
+        console.error('could not signup', error)
+      }
     }
-
+    
+    
   return (
 <div className="form-container">
     <h3>Sign-up for account</h3>

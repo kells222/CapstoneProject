@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import NavBar from './components/css/NavBar';
@@ -7,11 +7,11 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Posts from './components/Posts';
 import Filter from './components/Filter';
-// import CardHandle from './components/css/Card';
+// import Users from './components/Users';
 // import CardHandle from './components/css/Card';
 
 function App() {
- 
+ const [token,setToken] = useState('')
 
   return (
     <>
@@ -19,11 +19,10 @@ function App() {
     <NavBar/>
     {/* <CardHandle/> */}
     <Routes>
-      {/* <Route path='/guestcheckout' element={<CardHandle/>}/> */}
       <Route path='/filter' element={<Filter/>}/>
       <Route path='/' element={<Posts/>}/>
-      <Route path='/login' element={<Login/>} />
-      <Route path='/signup' element={<Signup/>} />
+      <Route path='/login' element={<Login setToken={setToken}/>} />
+      <Route path='/signup' element={<Signup token={token} setToken={setToken}/>} />
 
     </Routes>
       

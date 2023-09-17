@@ -2,7 +2,17 @@ import axios from 'axios';
 
 const BASE_URL = 'https://fakestoreapi.com/products'
 
-
+// export default getAllPosts() => {
+//     axios.get(BASE_URL)
+//     .then(res=>{
+//         console.log(res)
+//         return res
+//     })
+//     .catch (err=>{
+//         console.log('error fetching posts', err)
+//     })
+//     getAllPosts();
+// }
 
 
 // export async function getAllPosts(){
