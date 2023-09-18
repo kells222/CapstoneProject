@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import Filter from './Filter';
+import {CartContext} from './Cart';
 
 function Posts() {
 const [posts,setPosts] = useState([])
 const [expandedPostId,setExpandedPostId] = useState(null)
 const [selectedCategory,setSelectedCategory] = useState('');
 const [categories, setCategories] = useState([]);
+const {cartItems, addToCart} = useContext(CartContext)
 
     const getAllPosts = () => {
         axios.get('https://fakestoreapi.com/products')
@@ -47,7 +49,7 @@ const [categories, setCategories] = useState([]);
 
       <Filter categories={categories} selectedCategory={selectedCategory} onSelectCategory={handleCatChange}/>
         {/* <button onClick={getAllPosts}>get posts</button> */}
-        <div className='post-list'>
+        <div className='grid-container'>
             <h4>Click an item to view more details</h4>
             {filteredPosts.map(post => (
                 <div key={post.id} className='post'>
@@ -68,7 +70,7 @@ const [categories, setCategories] = useState([]);
                         <p>{post.rating.rate}</p>
                         <h5>Inventory remaining:</h5>
                         <p>{post.rating.count}</p>
-                        <button>Add to cart</button>
+                        <button onClick={() => addToCart(post)} className='px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700' >Add to cart</button>
                     </div> 
                     )}
                 </div>
