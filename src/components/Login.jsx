@@ -1,13 +1,15 @@
 import axios from "axios";
-import { useState } from "react";
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 
 
 
 function Login({setToken}) {
     const [user, setUser] = useState('');
     const [password,setPassword] = useState('');
+    // const [successMessage,setSuccessMessage] = useState('')
+    const navigate = useNavigate();
 
 
     const handleSubmit = async (e) => {
@@ -21,15 +23,20 @@ function Login({setToken}) {
           username: user,
           password: password
         });
-
+        
         const result = response.data;
         setToken(result.token);
         console.log(result);
+        
+        // setSuccessMessage('Logged in successfully');
+        
 
+        navigate('/');
         
         
       } catch (error) {
-        console.error('could not login', error)
+        console.error('could not login', error);
+        // setSuccessMessage('');
       }
     }
     
@@ -45,8 +52,9 @@ function Login({setToken}) {
         <input value={user} onChange={(e) => setUser(e.target.value)} type='text' placeholder='Your Username' id='user' name='username' /> <br/>
         <label htmlFor='password'>Password:</label>
         <input value={password} onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Your Password' id='password' name='password'/> <br/>
-        <button type='submit'>Log me in!</button>
+        <button type='submit' >Log me in!</button>
     </form>
+    {/* {successMessage && <p className="success-message"> {successMessage} </p>} */}
     <Link to='/signup' className="link-btn">No account? Sign-up here</Link>
   </div>
 

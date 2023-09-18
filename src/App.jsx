@@ -7,8 +7,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Posts from './components/Posts';
 import Filter from './components/Filter';
-// import Users from './components/Users';
-// import CardHandle from './components/css/Card';
+
 
 function App() {
  const [token,setToken] = useState('')
@@ -21,6 +20,7 @@ function App() {
     <Routes>
       <Route path='/filter' element={<Filter/>}/>
       <Route path='/' element={<Posts/>}/>
+      <Route path='/home' element={<Posts/>}/>
       <Route path='/login' element={<Login setToken={setToken}/>} />
       <Route path='/signup' element={<Signup token={token} setToken={setToken}/>} />
 

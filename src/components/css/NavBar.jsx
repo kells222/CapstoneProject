@@ -13,16 +13,17 @@ function NavBar() {
 
   return (
     <>
+      <div className='Nav'>
       {['md'].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
-            <Navbar.Brand href="#">Welcome!</Navbar.Brand>
+            <Navbar.Brand href="/home">Welcome!</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
-            >
+              >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   Product for sale
@@ -46,6 +47,7 @@ function NavBar() {
           </Container>
         </Navbar>
       ))}
+      </div>
     </>
   );
 }

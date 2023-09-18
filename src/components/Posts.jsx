@@ -13,9 +13,6 @@ const [categories, setCategories] = useState([]);
         .then(res=>{
             console.log(res)
             setPosts(res.data);
-            // const specificCats = [...new Set(data.map((post)=> post.category))];
-            // setCategories(specificCats);
-            // console.log(specificCats);
         })
         .catch (err=>{
             console.log('error fetching posts', err)
@@ -44,11 +41,11 @@ const [categories, setCategories] = useState([]);
 
 
   return (
-    <>
+      <>
    <div className='Posts'>
 
-        <Filter categories={categories} selectedCategory={selectedCategory} onSelectCategory={handleCatChange}/>
 
+      <Filter categories={categories} selectedCategory={selectedCategory} onSelectCategory={handleCatChange}/>
         {/* <button onClick={getAllPosts}>get posts</button> */}
         <div className='post-list'>
             <h4>Click an item to view more details</h4>
@@ -62,7 +59,7 @@ const [categories, setCategories] = useState([]);
                     
                     </section>
                     {expandedPostId === post.id &&(
-                    <div>
+                        <div>
                         <h5>Item Description:</h5> 
                         <p>{post.description}</p>
                         <h5>Category:</h5>
