@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import Filter from './Filter';
 import {CartContext} from './Cart';
+import Checkout from './Checkout';
 
 function Posts() {
 const [posts,setPosts] = useState([])
@@ -9,6 +10,12 @@ const [expandedPostId,setExpandedPostId] = useState(null)
 const [selectedCategory,setSelectedCategory] = useState('');
 const [categories, setCategories] = useState([]);
 const {cartItems, addToCart} = useContext(CartContext)
+const [showModal, setShowModal] = useState(false)
+
+
+    const toggle = () => {
+        setShowModal(!showModal)
+    }
 
     const getAllPosts = () => {
         axios.get('https://fakestoreapi.com/products')
@@ -25,6 +32,7 @@ const {cartItems, addToCart} = useContext(CartContext)
     useEffect(()=>{
         getAllPosts();
     },[])
+
 
     const handlePostClick = (postId) => {
         if (postId === expandedPostId ){
@@ -49,8 +57,15 @@ const {cartItems, addToCart} = useContext(CartContext)
 
       <Filter categories={categories} selectedCategory={selectedCategory} onSelectCategory={handleCatChange}/>
         {/* <button onClick={getAllPosts}>get posts</button> */}
+
         <div className='grid-container'>
+
             <h4>Click an item to view more details</h4>
+
+            {! showModal && <button className='px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
+            onClick={toggle}>Cart({cartItems.length})</button>}
+            <Checkout showModal={showModal} toggle={toggle} />  
+
             {filteredPosts.map(post => (
                 <div key={post.id} className='post'>
                     <section onClick={()=> handlePostClick(post.id)}>
@@ -71,11 +86,12 @@ const {cartItems, addToCart} = useContext(CartContext)
                         <h5>Inventory remaining:</h5>
                         <p>{post.rating.count}</p>
                         <button onClick={() => addToCart(post)} className='px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700' >Add to cart</button>
+                        
                     </div> 
                     )}
                 </div>
             ))}
-        </div>    
+        </div>  
     </div>
     </>
   )
