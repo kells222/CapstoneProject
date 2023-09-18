@@ -12,10 +12,21 @@ import Checkout from './components/Checkout';
 
 function App() {
  const [token,setToken] = useState('')
+ let imageStyle = {
+  height: '200px',
+  width: '1280px',
+  backgroundImage:'url("./Image 9-17-23 at 6.59 PM.jpg")',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'center center',
+ }
 
   return (
     <>
-    <h1>Lovelyfy</h1>
+    <div className='headerImg' style={imageStyle}>
+    <h1>Lovelyfy</h1> 
+    </div>
+    
     <NavBar/>
     {/* <CardHandle/> */}
     <Routes>

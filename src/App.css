@@ -8,6 +8,21 @@
   background-color: rgb(228, 168, 200);
 } */
 
+.headerImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "sans-serif";
+  font-weight: 5px;
+  font-size: 15px;
+  color: rgba(247, 255, 101, 0.98);
+  text-align: left;
+  font-style: italic;
+  font-variant: normal;
+  text-shadow: 5px 5px 8px black;
+  letter-spacing: 4px;
+}
+
 
 .form-container {
   padding-top: 50px;
