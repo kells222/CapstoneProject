@@ -4,6 +4,7 @@ export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [])
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const addToCart = (item) => {
     const isItemInCart = cartItems.find((cartItem) => cartItem.id === item.id);
@@ -55,7 +56,13 @@ export const CartProvider = ({ children }) => {
       setCartItems(JSON.parse(cartItems));
     }
   }, []);
-
+  //login context func
+  const logInFunc = (token) => {
+    token ? setLoggedIn(true) : setLoggedIn(false)
+ }
+ const logOutFunc = () => {
+  setLoggedIn(false)
+ }
   return (
     <CartContext.Provider
       value={{
@@ -64,6 +71,9 @@ export const CartProvider = ({ children }) => {
         removeFromCart,
         clearCart,
         getCartTotal,
+        loggedIn,
+        logInFunc,
+        logOutFunc
       }}
     >
       {children}

@@ -16,11 +16,12 @@ function App() {
  const [token,setToken] = useState('')
  let imageStyle = {
   height: '200px',
-  width: '1280px',
+  width: '1210px',
   backgroundImage:'url("./Image 9-17-23 at 6.59 PM.jpg")',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center center',
+  
  }
 
   return (
@@ -37,7 +38,6 @@ function App() {
       <Route path='/home' element={<Posts/>}/>
       {/* <Route path='/checkout' element={<CartProvider/>} cartContext={<CartContext/>} /> */}
       <Route path='/checkout' element={<Checkout/>}/>
-
       <Route path='/login' element={<Login setToken={setToken}/>} />
       <Route path='/signup' element={<Signup token={token} setToken={setToken}/>} />
 

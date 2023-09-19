@@ -9,9 +9,11 @@ const [posts,setPosts] = useState([])
 const [expandedPostId,setExpandedPostId] = useState(null)
 const [selectedCategory,setSelectedCategory] = useState('');
 const [categories, setCategories] = useState([]);
-const {cartItems, addToCart} = useContext(CartContext)
+const {cartItems, addToCart, loggedIn } = useContext(CartContext)
 const [showModal, setShowModal] = useState(false)
 
+const [toggleState,setToggleState] = useState(false)
+console.log(loggedIn, 'yourelogged in')
 
     const toggle = () => {
         setShowModal(!showModal)
@@ -50,6 +52,8 @@ const [showModal, setShowModal] = useState(false)
    ? posts.filter((post)=> post.category === selectedCategory) : posts;
 
 
+
+
   return (
       <>
    <div className='Posts'>
@@ -62,9 +66,11 @@ const [showModal, setShowModal] = useState(false)
 
             <h4>Click an item to view more details</h4>
 
+          
+{/* 
             {! showModal && <button className='px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
             onClick={toggle}>Cart({cartItems.length})</button>}
-            <Checkout showModal={showModal} toggle={toggle} />  
+            <Checkout showModal={showModal} toggle={toggle} />   */}
 
             {filteredPosts.map(post => (
                 <div key={post.id} className='post'>

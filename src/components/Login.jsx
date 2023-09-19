@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-
+import { CartContext } from "./Cart";
 
 
 function Login({setToken}) {
@@ -10,6 +10,7 @@ function Login({setToken}) {
     const [password,setPassword] = useState('');
     // const [successMessage,setSuccessMessage] = useState('')
     const navigate = useNavigate();
+    const { loggedIn, logInFunc } = useContext(CartContext);
 
 
     const handleSubmit = async (e) => {
@@ -25,7 +26,8 @@ function Login({setToken}) {
         });
         
         const result = response.data;
-        setToken(result.token);
+      //  setToken(result.token);
+      logInFunc(result.token)
         console.log(result);
         
         // setSuccessMessage('Logged in successfully');
