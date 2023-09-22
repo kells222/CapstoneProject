@@ -44,7 +44,8 @@ export const CartProvider = ({ children }) => {
 
   const getCartTotal = () => {
     const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-    return parseFloat(total.toFixed(2))
+    const formattedTotal = total.toFixed(2);
+    return formattedTotal.padEnd(5,'0')
 ;  };
 
   useEffect(() => {

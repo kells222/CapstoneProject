@@ -51,9 +51,6 @@ console.log(loggedIn, 'youre logged in')
    const filteredPosts = selectedCategory
    ? posts.filter((post)=> post.category === selectedCategory) : posts;
 
-
-
-
   return (
       <>
    <div className='Posts'>
@@ -72,7 +69,7 @@ console.log(loggedIn, 'youre logged in')
                     <h2>{post.title}</h2>
                     <br/>
                     <img src={post.image} alt={post.title}/>
-                    <h5>Price: ${post.price} USD</h5>
+                    <h5>Price: ${post.price.toFixed(2)} USD</h5>
                     
                     </section>
                     {expandedPostId === post.id &&(
