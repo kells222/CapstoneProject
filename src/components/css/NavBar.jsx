@@ -1,15 +1,13 @@
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown'
 import Navbar from 'react-bootstrap/Navbar';
-// import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-// import Filter from '../Filter';
 import {Link} from 'react-router-dom'
 import { useContext } from 'react';
 import { CartContext } from '../Cart';
+// import Filter from '../Filter';
+// import {categories} from '../Posts'
 
 function NavBar() {
   const { loggedIn , logOutFunc } = useContext(CartContext);
@@ -44,7 +42,10 @@ function NavBar() {
                     <NavDropdown.Item href="#action5">Jewelery</NavDropdown.Item>
                     <NavDropdown.Item href="#action6">Electronics</NavDropdown.Item>
                   </NavDropdown> */}
+      {/* <Filter categories={categories} selectedCategory={selectedCategory} onSelectCategory={handleCatChange}/> */}
+
                   
+                  {loggedIn ? <Nav.Link onClick={logOutFunc}>Logout</Nav.Link> : ''}
                   <Nav.Link as={Link} to='/checkout'  >Checkout</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
@@ -52,7 +53,6 @@ function NavBar() {
           </Container>
         </Navbar>
       ))}
-      {loggedIn ? <button onClick={logOutFunc}>Logout</button> : ''}
       </div>
     </>
   );

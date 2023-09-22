@@ -43,8 +43,9 @@ export const CartProvider = ({ children }) => {
   };
 
   const getCartTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-  };
+    const total = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return parseFloat(total.toFixed(2))
+;  };
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -56,7 +57,7 @@ export const CartProvider = ({ children }) => {
       setCartItems(JSON.parse(cartItems));
     }
   }, []);
-  
+
   //login context func
   const logInFunc = (token) => {
     token ? setLoggedIn(true) : setLoggedIn(false)

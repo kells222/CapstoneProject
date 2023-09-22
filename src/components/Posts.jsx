@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import Filter from './Filter';
 import {CartContext} from './Cart';
-import Checkout from './Checkout';
+// import Checkout from './Checkout'; 
 
 function Posts() {
 const [posts,setPosts] = useState([])
@@ -10,10 +10,10 @@ const [expandedPostId,setExpandedPostId] = useState(null)
 const [selectedCategory,setSelectedCategory] = useState('');
 const [categories, setCategories] = useState([]);
 const {cartItems, addToCart, loggedIn } = useContext(CartContext)
-const [showModal, setShowModal] = useState(false)
+// const [showModal, setShowModal] = useState(false)
 
-const [toggleState,setToggleState] = useState(false)
-console.log(loggedIn, 'yourelogged in')
+// const [toggleState,setToggleState] = useState(false)
+console.log(loggedIn, 'youre logged in')
 
     // const toggle = () => {
     //     setShowModal(!showModal)
@@ -65,13 +65,7 @@ console.log(loggedIn, 'yourelogged in')
         <div className='grid-container'>
 
             <h4>Click an item to view more details</h4>
-
-          
-{/* 
-            {! showModal && <button className='px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
-            onClick={toggle}>Cart({cartItems.length})</button>}
-            <Checkout showModal={showModal} toggle={toggle} />   */}
-
+            
             {filteredPosts.map(post => (
                 <div key={post.id} className='post'>
                     <section onClick={()=> handlePostClick(post.id)}>
