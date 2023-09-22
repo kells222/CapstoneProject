@@ -10,14 +10,8 @@ const [expandedPostId,setExpandedPostId] = useState(null)
 const [selectedCategory,setSelectedCategory] = useState('');
 const [categories, setCategories] = useState([]);
 const {cartItems, addToCart, loggedIn } = useContext(CartContext)
-// const [showModal, setShowModal] = useState(false)
 
-// const [toggleState,setToggleState] = useState(false)
-console.log(loggedIn, 'youre logged in')
-
-    // const toggle = () => {
-    //     setShowModal(!showModal)
-    // }
+    console.log(loggedIn, 'youre logged in')
 
     const getAllPosts = () => {
         axios.get('https://fakestoreapi.com/products')
@@ -52,14 +46,10 @@ console.log(loggedIn, 'youre logged in')
    ? posts.filter((post)=> post.category === selectedCategory) : posts;
 
   return (
-      <>
+    <>
    <div className='Posts'>
-
-
-      <Filter categories={categories} selectedCategory={selectedCategory} onSelectCategory={handleCatChange}/>
-        {/* <button onClick={getAllPosts}>get posts</button> */}
-
-        <div className='grid-container'>
+    <Filter categories={categories} selectedCategory={selectedCategory} onSelectCategory={handleCatChange}/>
+    <div className='grid-container'>
 
             <h4>Click an item to view more details</h4>
             
@@ -91,7 +81,7 @@ console.log(loggedIn, 'youre logged in')
         </div>  
     </div>
     </>
-  )
+)
 }
 
 export default Posts

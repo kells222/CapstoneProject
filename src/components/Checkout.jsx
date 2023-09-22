@@ -13,18 +13,13 @@ function Checkout() {
     navigate('/purchase')
    }
  
-   
-  
-
   return (
     <>
-   
    
     <div className="flex-col flex items-center bg-white gap-8 p-10 text-black text-sm">
         <h1 className="text-2xl font-bold">Cart</h1>
         <div className="absolute right-16 top-10">
-        {/* <button className="px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700" 
-        onClick={toggle}>Close</button> */}
+      
     </div>
     <div className="flex flex-col gap-4">
       {cartItems.map((item) => (

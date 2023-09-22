@@ -9,7 +9,7 @@ import { CartContext } from '../Cart';
 // import Users from '../Users';
 
 function NavBar() {
-  const { loggedIn , logOutFunc, userName } = useContext(CartContext);
+  const { loggedIn , logOutFunc } = useContext(CartContext);
 
  
 
@@ -19,7 +19,7 @@ function NavBar() {
       {['md'].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
-            <Navbar.Brand as={Link} to='/home'>Welcome {userName ? `, ${userName}!` : '!'} </Navbar.Brand>
+            <Navbar.Brand as={Link} to='/home'>Welcome!</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
