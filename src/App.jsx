@@ -7,7 +7,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Posts from './components/Posts';
 import Filter from './components/Filter';
-// import { CartContext, CartProvider } from './components/Cart';
+import Purchase from './components/Purchase';
 import Checkout from './components/Checkout';
 
 
@@ -36,7 +36,7 @@ function App() {
       <Route path='/filter' element={<Filter/>}/>
       <Route path='/' element={<Posts/>}/>
       <Route path='/home' element={<Posts/>}/>
-      {/* <Route path='/checkout' element={<CartProvider/>} cartContext={<CartContext/>} /> */}
+      <Route path='/purchase' element={<Purchase/>}/>
       <Route path='/checkout' element={<Checkout/>}/>
       <Route path='/login' element={<Login setToken={setToken}/>} />
       <Route path='/signup' element={<Signup token={token} setToken={setToken}/>} />

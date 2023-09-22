@@ -56,6 +56,7 @@ export const CartProvider = ({ children }) => {
       setCartItems(JSON.parse(cartItems));
     }
   }, []);
+  
   //login context func
   const logInFunc = (token) => {
     token ? setLoggedIn(true) : setLoggedIn(false)

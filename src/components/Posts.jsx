@@ -15,9 +15,9 @@ const [showModal, setShowModal] = useState(false)
 const [toggleState,setToggleState] = useState(false)
 console.log(loggedIn, 'yourelogged in')
 
-    const toggle = () => {
-        setShowModal(!showModal)
-    }
+    // const toggle = () => {
+    //     setShowModal(!showModal)
+    // }
 
     const getAllPosts = () => {
         axios.get('https://fakestoreapi.com/products')
