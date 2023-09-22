@@ -27,11 +27,10 @@ function App() {
   return (
     <>
     <div className='headerImg' style={imageStyle}>
-    <h1>Lovelyfy</h1> 
+    <h1>Lucky Wings</h1> 
     </div>
     
     <NavBar/>
-    {/* <CardHandle/> */}
     <Routes>
       <Route path='/filter' element={<Filter/>}/>
       <Route path='/' element={<Posts/>}/>
