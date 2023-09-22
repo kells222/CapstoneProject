@@ -1,17 +1,17 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown'
+// import NavDropdown from 'react-bootstrap/NavDropdown'
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import {Link} from 'react-router-dom'
+import {Link } from 'react-router-dom'
 import { useContext } from 'react';
 import { CartContext } from '../Cart';
-// import Filter from '../Filter';
-// import {categories} from '../Posts'
+// import Users from '../Users';
 
 function NavBar() {
-  const { loggedIn , logOutFunc } = useContext(CartContext);
+  const { loggedIn , logOutFunc, userName } = useContext(CartContext);
 
+ 
 
   return (
     <>
@@ -19,7 +19,7 @@ function NavBar() {
       {['md'].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
-            <Navbar.Brand as={Link} to='/home'>Welcome!{loggedIn ? ' You are successfully logged in!' : ''}</Navbar.Brand>
+            <Navbar.Brand as={Link} to='/home'>Welcome {userName ? `, ${userName}!` : '!'} </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -34,7 +34,9 @@ function NavBar() {
               <Offcanvas.Body>
              
                 <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav.Link>{loggedIn ? ' You are successfully logged in!' : ''}</Nav.Link>
                   <Nav.Link as={Link} to='/home' >Home</Nav.Link>
+
                  {!loggedIn ? <Nav.Link as={Link} to='login' >Login</Nav.Link> : '' }
                   {/* <NavDropdown title="Search By Category" id={`offcanvasNavbarDropdown-expand-${expand}`}>
                     <NavDropdown.Item href="<#>">Men's Clothing</NavDropdown.Item>
