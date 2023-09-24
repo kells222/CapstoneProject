@@ -13,9 +13,9 @@ function Checkout() {
    navigate('/purchase');
    };
 
-   useEffect (() => {
-    clearCart();
-   },[]);
+  //  useEffect (() => {
+  //   clearCart();
+  //  },[]);
  
   return (
     <>
