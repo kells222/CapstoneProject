@@ -13,7 +13,7 @@ function Login() {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      // console.log(user);
+      console.log(user);
       // // dont forget to take off console pw
       // console.log(password);
       

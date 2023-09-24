@@ -44,4 +44,4 @@ function Signup({setToken}) {
   )
 }
 
-export default Signup
+export default Signup;

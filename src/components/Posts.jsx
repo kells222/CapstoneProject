@@ -92,7 +92,7 @@ const [searchResult, setSearchResult] = useState([]);
                         <p>{post.rating.rate}</p>
                         <h5>Inventory remaining:</h5>
                         <p>{post.rating.count}</p>
-                        <button onClick={() => addToCart(post)} className='px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700' >Add to cart</button>
+                        <button onClick={() => addToCart(post)}>Add to cart</button>
                         
                     </div> 
                     )}
@@ -117,7 +117,7 @@ const [searchResult, setSearchResult] = useState([]);
                     <p>{post.rating.rate}</p>
                     <h5>Inventory remaining:</h5>
                     <p>{post.rating.count}</p>
-                    <button onClick={() => addToCart(post)} className='px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700' >Add to cart</button>
+                    <button onClick={() => addToCart(post)}>Add to cart</button>
                     
                 </div> 
                 )}
@@ -127,6 +127,6 @@ const [searchResult, setSearchResult] = useState([]);
     </div>
     </>
 )
-}
+};
 
-export default Posts
+export default Posts;

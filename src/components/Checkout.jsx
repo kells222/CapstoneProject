@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import React , {useContext} from 'react';
 import { CartContext } from './Cart';
 import { useNavigate } from 'react-router-dom';
@@ -22,40 +21,36 @@ function Checkout() {
     <>
    
     <div className="flex-col flex items-center bg-white gap-8 p-10 text-black text-sm">
-        <h1 className="text-2xl font-bold">Cart Checkout</h1>
-        <div className="absolute right-16 top-10">
-      
-    </div>
-    <div className="flex flex-col gap-4">
-      {cartItems.map((item) => (
-        <div className="flex justify-between items-center" key={item.id}>
-        <div className="flex gap-4">
-          <img src={item.image} alt={item.title} className="rounded-md h-24" />
-          <div className="flex flex-col">
-            <h1 className="text-lg font-bold">{item.title}</h1>
-            <p className="text-gray-600">${item.price.toFixed(2)}</p>
-          </div>
-    </div>
-    <div className="flex gap-4">
-        <button className="px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700" 
-        onClick={() => {addToCart(item)}}> + </button>
-        <p>{item.quantity}</p>
-        <button className="px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-        onClick={() => {removeFromCart(item)}}> - </button>
+    
+<h1>Cart Checkout</h1>
+<div>
+    {cartItems.map((item) => (
+      <div className="checkout-deets" key={item.id}>
+      <div className="checkout-deets">
+        <img src={item.image} alt={item.title} className="image"/>
+        <div>
+          <h2>{item.title}</h2>
+          <h4 className='price'>${item.price.toFixed(2)}</h4>
+        </div>
+      </div>
+    <div className="quantity-btn">
+      <button onClick={() => {addToCart(item)}}> + </button>
+      <p>{item.quantity}</p>
+      <button onClick={() => {removeFromCart(item)}}> - </button>
     </div>
     </div>
-))}
-    </div>
+    ))}
+</div>
+
     {cartItems.length > 0 ? ( 
-    <div className="flex flex-col justify-between items-center">
-    <h1 className="text-lg font-bold">Total: ${getCartTotal()}</h1>
-    <button className="px-4 py-2 bg-gray-800 text-black text-xs font-bold uppercase rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-    onClick={() => {clearCart()}}> Clear cart </button>
-    </div>) : (<h3 className="text-lg font-bold">Nothing in cart</h3>)}
+    <div>
+    <h2>Total: ${getCartTotal()}</h2>
+    <button onClick={() => {clearCart()}}> Clear cart </button>
+    </div>) : (<h3>Nothing in cart</h3>)}
 
 
     {cartItems.length > 0 ? (
-    <button className='done' onClick={completePurchase}>Complete Purchase</button>) : (<h3 className="text-lg font-bold">Click home to start shopping!</h3>)}
+    <button className='done' onClick={completePurchase}>Complete Purchase</button>) : (<h3>Click home to start shopping!</h3>)}
     </div>
     
     
