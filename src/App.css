@@ -29,6 +29,15 @@
   color: black;
 }
 
+.price-home {
+  font-size: larger;
+}
+
+h5 {
+  font-weight: bold;
+  font-size: medium;
+}
+
 .form-container {
   padding-top: 50px;
   padding-bottom: 60px;

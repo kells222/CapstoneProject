@@ -79,7 +79,7 @@ const [searchResult, setSearchResult] = useState([]);
                     <h2>{post.title}</h2>
                     <br/>
                     <img src={post.image} alt={post.title}/>
-                    <h5>Price: ${post.price.toFixed(2)} USD</h5>
+                    <h5 className='price-home'>Price: ${post.price.toFixed(2)} USD</h5>
                     
                     </section>
                     {expandedPostId === post.id &&(
@@ -104,11 +104,11 @@ const [searchResult, setSearchResult] = useState([]);
                 <h2>{post.title}</h2>
                 <br/>
                 <img src={post.image} alt={post.title}/>
-                <h5>Price: ${post.price.toFixed(2)} USD</h5>
+                <h5 className='price-home'>Price: ${post.price.toFixed(2)} USD</h5>
                 
                 </section>
                 {expandedPostId === post.id &&(
-                    <div>
+                    <div >
                     <h5>Item Description:</h5> 
                     <p>{post.description}</p>
                     <h5>Category:</h5>
