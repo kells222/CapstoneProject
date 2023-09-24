@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React , {useContext, useEffect, useState} from 'react';
+// import PropTypes from 'prop-types';
+import React , {useContext, useEffect} from 'react';
 import { CartContext } from './Cart';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,8 +10,12 @@ function Checkout() {
     const navigate = useNavigate();
 
    const navigatePurchase = ( ) => {
-    navigate('/purchase')
-   }
+   navigate('/purchase');
+   };
+
+   useEffect (() => {
+    clearCart();
+   },[]);
  
   return (
     <>
@@ -57,9 +61,6 @@ function Checkout() {
 </>
 )}
 
-Checkout.propTypes = {
-    showModal: PropTypes.bool,
-    toggle: PropTypes.func
-  }
 
-export default Checkout
+
+export default Checkout;

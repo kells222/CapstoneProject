@@ -2,8 +2,9 @@ import React from 'react';
 
 function Filter({ categories, selectedCategory, onSelectCategory }) {
   return (
+    <>
     <div className="Filter">
-      <h3>Filter by Category:</h3>
+      <h6>Filter by Category:</h6>
       <select value={selectedCategory} onChange={(e) => onSelectCategory(e.target.value)}>
         <option value="">All Categories</option>
         <option value="men's clothing">Men's Clothing</option>
@@ -18,7 +19,10 @@ function Filter({ categories, selectedCategory, onSelectCategory }) {
           </option>
         ))}
       </select>
+    
     </div>
+    <br/>
+    </>
   );
 }
 
