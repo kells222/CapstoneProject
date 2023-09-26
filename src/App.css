@@ -14,13 +14,13 @@
   align-items: center;
   margin: auto;
   font-family: "sans-serif";
-  font-weight: 5px;
-  font-size: 15px;
-  color: rgba(83, 255, 9, 0.98);
+  font-weight: 8px;
+  font-size: large;
+  color: rgba(255, 255, 255, 0.913);
   text-align: left;
   font-style: italic;
   font-variant: normal;
-  text-shadow: 5px 5px 8px black;
+  text-shadow: rgb(255, 0, 251) 1px 0 10px;
   letter-spacing: 4px;
   
 }

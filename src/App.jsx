@@ -24,10 +24,13 @@ function App() {
   
  }
 
+
+// lucent-dusk-c1acbc
+
   return (
     <>
     <div className='headerImg' style={imageStyle}>
-    <h1>Lucky Wings</h1> 
+    <h1>Lucky Wishes</h1> 
     </div>
     
     <NavBar/>
