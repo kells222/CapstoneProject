@@ -25,8 +25,6 @@ function App() {
  }
 
 
-// lucent-dusk-c1acbc
-
   return (
     <>
     <div className='headerImg' style={imageStyle}>
