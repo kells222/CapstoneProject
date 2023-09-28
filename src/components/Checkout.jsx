@@ -20,7 +20,7 @@ function Checkout() {
   return (
     <>
    
-    <div className="flex-col flex items-center gap-8 p-10 text-black text-sm">
+<div className="cart-container">
     
 <h1>Cart Checkout</h1>
 <div>

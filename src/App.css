@@ -38,7 +38,7 @@ h5 {
   font-size: medium;
 }
 
-.form-container {
+.form-container, .cart-container, .purchase-container {
   padding-top: 50px;
   padding-bottom: 60px;
   border: solid pink 5px;
@@ -58,12 +58,6 @@ h5 {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-/* 
-.grid-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr;
-} */
 
 .post {
   padding: 15px;
@@ -112,4 +106,12 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+footer {
+  padding: 30px;
+  border: dotted pink 2px;
+  margin: auto;
+  border-radius: 12px;
+
 }

@@ -9,6 +9,7 @@ import Posts from './components/Posts';
 import Filter from './components/Filter';
 import Purchase from './components/Purchase';
 import Checkout from './components/Checkout';
+import Footer from './components/Footer';
 
 
 
@@ -43,6 +44,7 @@ function App() {
 
     </Routes>
       
+    <Footer/>
     </>
   )
 }
