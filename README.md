@@ -1,5 +1,17 @@
 # React + Vite
 
+Deployment Link:
+https://luckywishes.netlify.app
+
+you can also access the site on github I believe there is a link to the site via vercel with the help of my awesome mentors it deploys properly on both
+https://capstone-project-kells222.vercel.app/
+
+
+
+
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
