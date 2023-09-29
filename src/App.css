@@ -8,6 +8,11 @@
   background-color: rgb(228, 168, 200);
 } */
 
+/* @media screen  and (max-width: 767px) {
+  
+} */
+
+
 .headerImg {
   display: flex;
   justify-content: center;
@@ -67,10 +72,13 @@ h5 {
   grid-area: span;
 }
 
+
 img {
   height: 500px;
-  max-width: 600px;
+  max-width: 640px;
+  object-fit: contain;
 }
+
 
 h4 {
   color: rgba(163, 92, 104, 0.797);

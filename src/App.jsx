@@ -17,7 +17,7 @@ function App() {
  const [token,setToken] = useState('')
  let imageStyle = {
   height: '200px',
-  width: '1210px',
+  width: 'auto',
   backgroundImage:'url("./Image 9-17-23 at 6.59 PM.jpg")',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
